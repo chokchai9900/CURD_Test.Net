@@ -1,0 +1,66 @@
+﻿@model CURD_Test.Net.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProductModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">ID
+            Product ID
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._id)
+        </dd>
+        <dt class = "col-sm-2">
+            Product name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-2">
+            Product Brand
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.brand)
+        </dd>
+        <dt class="col-sm-2">
+            Discription
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.discription)
+        </dd>
+        <dt class = "col-sm-2">
+            Price
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt class="col-sm-2">
+            Remaining products
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.countOfProduct)
+        </dd>
+        <dt class = "col-sm-2">
+            First Imported Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstImportedDatetime)
+        </dd>
+        <dt class = "col-sm-2">
+            Last Update Data
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastUpdateDatetime)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model._id  }) |
+    <a asp-action="Index">Back to List</a>
+</div>

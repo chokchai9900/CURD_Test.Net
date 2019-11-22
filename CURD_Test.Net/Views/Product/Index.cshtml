@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CURD_Test.Net.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product ID
+                @*@Html.DisplayNameFor(model => model._id)*@
+            </th>
+            <th>
+                Product Name
+                @*@Html.DisplayNameFor(model => model.name)*@
+            </th>
+            <th>
+                Brand
+                @*@Html.DisplayNameFor(model => model.brand)*@
+            </th>
+            <th>
+                Price($)
+                @*@Html.DisplayNameFor(model => model.price)*@
+            </th>
+            <th>
+                Remaining products
+                @*@Html.DisplayNameFor(model => model.countOfProduct)*@
+            </th>
+            <th>
+                Last Updata products 
+                @*@Html.DisplayNameFor(model => model.countOfProduct)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price) US
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.countOfProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdateDatetime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item._id }) 
+                @Html.ActionLink("Details", "Details", new { id=item._id })
+                @Html.ActionLink("Delete", "Delete", new { id=item._id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
